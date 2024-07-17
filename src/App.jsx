@@ -5,6 +5,7 @@ import Navigation from "./Components/Navigation";
 import Home from "./Views/Home";
 import Dog from "./Views/Dog";
 
+
 export default function App() {
 
     const [dogs, setDogs] = useState([]);
