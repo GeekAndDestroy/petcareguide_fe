@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 export default function Dog() {
@@ -18,5 +18,7 @@ export default function Dog() {
         fetchDog();
     }, []);
 
-    return <div>{ dog.name }</div>;
+    return (
+        <div>{ dog.name }</div>
+    )
 }

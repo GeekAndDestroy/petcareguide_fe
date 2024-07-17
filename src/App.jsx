@@ -26,7 +26,7 @@ export default function App() {
 
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/dog/:id" element={<Dog />} />
+                <Route path="/dog/:dog_id" element={<Dog />} />
             </Routes>
         </>
     );
