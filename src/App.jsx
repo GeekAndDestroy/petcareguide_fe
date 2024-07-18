@@ -11,7 +11,7 @@ export default function App() {
     const [dogs, setDogs] = useState([]);
 
     const fetchDogs = async () => {
-        const response = await fetch("http://localhost:8000/dog/");
+        const response = await fetch("http://3.16.138.57:8000/dog/");
         const data = await response.json();
         setDogs(data);
         console.log(data);

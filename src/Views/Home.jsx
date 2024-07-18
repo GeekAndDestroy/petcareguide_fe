@@ -4,7 +4,7 @@ export default function Home() {
     const [activities, setActivities] = useState([]);
 
     const fetchActivities = async () => {
-        const response = await fetch("http://localhost:8000/dog/activity_log/");
+        const response = await fetch("http://3.16.138.57:8000/dog/activity_log/");
         const data = await response.json();
         setActivities(data);
         console.log(data);
@@ -16,10 +16,10 @@ export default function Home() {
 
     return (
         <>
-            <div className="flex justify-center w-full">
-                <div className="w-full">
-                    <h1 className="text-3xl my-16 font-extrabold">Here's what the dogs have been up to!</h1>
-                    <div className="overflow-x-auto w-full">
+            <div className="flex items-center justify-center w-full">
+                <div className="flex flex-col items-center justify-center w-full">
+                    <h1 className="text-3xl my-16 font-extrabold text-center">Here's what the dogs have been up to!</h1>
+                    <div className="overflow-x-auto w-10/12  bg-base-200">
                         <table className="table table-lg">
                             {/* head */}
                             <thead>

@@ -16,9 +16,9 @@ const activityLogDetailEndpoint = "/activity-log/:id/";
 // }
 
 export async function getDogs() {
-    return axios
-        .get(`${baseURL}${dogEndpoint}`)
-        .then((response) => response.data);
+    const response = await fetch(`${baseURL}${dogEndpoint}`);
+    const data = await response.json();
+    return data;
 }
 
 export async function createDog(data) {
