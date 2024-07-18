@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import FeedingInfo from "../Components/FeedingInfo";
+import ActivityLog from "../Components/ActivityLog";
 
 export default function Dog() {
     const { dog_id } = useParams();
@@ -84,58 +86,9 @@ export default function Dog() {
             <h1 className="text-3xl my-16 font-extrabold w-full text-center">
                 Here's what you need to know for {dog.name}!
             </h1>
-            <div className="flex flex-col items-center justify-center border-2 rounded-2xl w-10/12 p-16 my-4  bg-base-200">
-                <h1 className="text-2xl mb-16  font-extrabold w-full">
-                    {dog.name}'s Info
-                </h1>
-                <ul className="">
-                    <li className="my-4">
-                        <h6 className="text-xl font-bold">Breed</h6>
-                        <p>{dog.breed}</p>
-                    </li>
-                    <li className="my-4">
-                        <h6 className="text-xl font-bold">
-                            Estimated Date Of Birth
-                        </h6>
-                        <p>{dog.est_dob}</p>
-                    </li>
-                    <li className="my-4">
-                        <h6 className="text-xl font-bold">Weight</h6>
-                        <p>{dog.weight} lbs</p>
-                    </li>
-                    <li className="my-4">
-                        <h6 className="text-xl font-bold">Sex</h6>
-                        <p>{dog.sex}</p>
-                    </li>
-                    <li className="my-4">
-                        <h6 className="text-xl font-bold">
-                            Known Medical Conditions
-                        </h6>
-                        <p>{dog.medical_conditions}</p>
-                    </li>
-                </ul>
-            </div>
-            <div className="border-2 rounded-2xl w-10/12 p-16 my-4  bg-base-200">
-                <h1 className="text-2xl mb-16 font-extrabold w-full">
-                    {dog.name}'s Feeding Schedule
-                </h1>
-                <div className="">
-                    <ul className="">
-                        <li className="my-4">
-                            <h6 className="text-xl font-bold">Food</h6>
-                            <p>{feedingSchedule.food}</p>
-                        </li>
-                        <li className="my-4">
-                            <h6 className="text-xl font-bold">Amount</h6>
-                            <p>{feedingSchedule.amount} cups</p>
-                        </li>
-                        <li className="my-4">
-                            <h6 className="text-xl font-bold">Frequency</h6>
-                            <p>{feedingSchedule.frequency}</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+
+            <FeedingInfo dog={dog} />
+
             <h1 className="text-3xl mt-16 font-extrabold">
                 Here's what {dog.name} has been up to!
             </h1>
@@ -149,31 +102,10 @@ export default function Dog() {
                     Add Activity
                 </button>
             </span>
-            <div className="overflow-x-auto w-10/12 mb-16">
-                <table className="table table-lg  bg-base-200">
-                    {/* head */}
-                    <thead>
-                        <tr>
-                            <th className="text-center">Date</th>
-                            <th className="text-center">Activity</th>
-                            <th className="text-center">Notes</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {activityLogs.map((activity) => (
-                            <tr key={activity.id} className="hover">
-                                <td className="text-center">{activity.date}</td>
-                                <td className="text-center">
-                                    {activity.activity}
-                                </td>
-                                <td className="text-center">
-                                    {activity.notes}
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+
+            <ActivityLog activityLogs={activityLogs} />
+
+
             <dialog id="AL_Modal" className="modal">
                 <div className="modal-box">
                     <h3 className="font-bold text-lg">Add Activity to Log</h3>
