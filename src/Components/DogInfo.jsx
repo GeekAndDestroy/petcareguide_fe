@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function FeedingInfo({ dog }) {
+export default function DogInfo({ dog }) {
     return (
         <div className="flex flex-col items-center justify-center border-2 rounded-2xl w-10/12 p-16 my-4  bg-base-200">
             <h1 className="text-2xl mb-16  font-extrabold w-full">

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import FeedingInfo from "../Components/FeedingInfo";
+import DogInfo from "../Components/DogInfo";
+import FeedingSchedule from "../Components/FeedingSchedule";
 import ActivityLog from "../Components/ActivityLog";
 
 export default function Dog() {
@@ -87,11 +88,15 @@ export default function Dog() {
                 Here's what you need to know for {dog.name}!
             </h1>
 
-            <FeedingInfo dog={dog} />
+            <DogInfo dog={dog} />
+
+            <FeedingSchedule feedingSchedule={feedingSchedule} dog={dog}/>
+
 
             <h1 className="text-3xl mt-16 font-extrabold">
                 Here's what {dog.name} has been up to!
             </h1>
+
             <span className="w-full">
                 <button
                     className="btn btn-primary m-4"
