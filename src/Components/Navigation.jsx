@@ -61,20 +61,13 @@ export default function Navigation({ dogs }) {
                 {/* <a className="btn">Add Dog</a> */}
                 <select data-choose-theme className='appearance-none dropdown dropdown-end dropdown-content z-[1] p-2 shadow-2xl bg-base-300 rounded-box w-30' id="theme">
           <option value="dark">Dark</option>
-          <option value="light">Light</option>
-          <option value="cupcake">Cupcake</option>
           <option value="aqua">Aqua</option>
           <option value="bumblebee">Bumblebee</option>
-          <option value="emerald">Emerald</option>
-          <option value="corporate">Corporate</option>
           <option value="synthwave">Synthwave</option>
           <option value="retro">Retro</option>
           <option value="cyberpunk">Cyberpunk</option>
           <option value="valentine">Valentine</option>
           <option value="halloween">Halloween</option>
-          <option value="garden">Garden</option>
-          <option value="forest">Forest</option>
-          <option value="aerolite">Aerolite</option>
           <option value="dracula">Dracula</option>
       </select>
             </div>

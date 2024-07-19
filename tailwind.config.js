@@ -8,7 +8,7 @@ export default {
     extend: {},
   },
   daisyui: {
-    themes: ["light", "dark", "cupcake", "aqua", "bumblebee", "emerald", "corporate", "synthwave", "retro", "cyberpunk", "valentine", "halloween", "garden", "forest", "aerolite", "dracula"],
+    themes: ["dark", "aqua", "bumblebee", "synthwave", "retro", "cyberpunk", "valentine", "halloween", "dracula"],
   },
   plugins: [
     require("@tailwindcss/typography"), 
