@@ -10,6 +10,18 @@ export default function Home() {
         console.log(data);
     };
 
+    const formatDate = (dateString) => {
+        const date = new Date(dateString);
+        return date.toLocaleString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+        });
+      };
+
     useEffect(() => {
         fetchActivities();
     }, []);
@@ -34,7 +46,7 @@ export default function Home() {
                                 
                                 {activities.map((activity) => (
                                     <tr key={activity.id}  className="hover">
-                                        <td className="text-center">{activity.date}</td>
+                                        <td className="text-center">{formatDate(activity.date)}</td>
                                         <td className="text-center">{activity.activity}</td>
                                         <td className="text-center">{activity.notes}</td>
                                     </tr>
